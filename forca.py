@@ -5,3 +5,6 @@ def jogar():
     print('*' * 28)
     
     print('Fim do jogo')
+
+if(__name__ == '__main__'):
+    jogar()
