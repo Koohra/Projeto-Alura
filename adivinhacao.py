@@ -6,6 +6,7 @@ print('*' * 33)
 
 total_tentativas = 0
 numero_secreto = randint(1, 100)
+pontos = 1000
 
 print('Qual nivel de dificuldade?')
 print('(1) Fácil (2) Médio (3) Difício')
@@ -35,14 +36,15 @@ for rodada in range (1, total_tentativas + 1):
 
     if(acertou):
         print(f'Você digitou {chute}')
-        print('Voce acertou')
+        print(f'Voce acertou e fez {pontos}')
         break
     else:
         if(maior):
             print('Você errou! O seu chute foi maior do que o número secreto.')
         elif(menor):
             print('Você errou! O seu chute foi menor do que o número secreto.')
-    
+    pontos_perdidos = abs(numero_secreto - chute)
+    pontos -= pontos_perdidos
     
 
 print('Fim do jogo')
